@@ -1,6 +1,6 @@
-@use '_colors';
+@use '_colors' as *;
 @use 'components';
-@use 'mixins' ;
+@use 'mixins';
 
 *,
 *::before,
@@ -17,7 +17,6 @@ html {
 body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1.6rem;
-	background-color: aqua;
 }
 
 //NAV
@@ -36,8 +35,9 @@ body {
 		border: 1px solid rgb(255, 255, 255, 0.5);
 		border-radius: 8px;
 	}
-	&:hover{
-		.burger-btn__bars::after,.burger-btn__bars::before{
+	&:hover {
+		.burger-btn__bars::after,
+		.burger-btn__bars::before {
 			width: 100%;
 		}
 	}
@@ -60,7 +60,46 @@ body {
 		&::before {
 			top: 27px;
 			width: 30%;
-			transition-delay: .06s;
+			transition-delay: 0.06s;
 		}
 	}
+}
+
+//header
+.header {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 2em;
+	height: 75vh;
+	text-align: center;
+	color: $pure-white;
+	@include mixins.heroImages('../img/meat-header-mini.jpg');
+	background-attachment: scroll;
+	&__heading {
+		font-size: 4.8rem;
+		font-weight: 300;
+		text-transform: uppercase;
+	}
+	&__text {
+		font-size: 1.4rem;
+	}
+	&__btn {
+		margin-top: 2em;
+		padding: 0.8em 1.6em;
+		background: $pure-white;
+		border: none;
+		border-radius: 8px;
+		color: $dark;
+		text-decoration: none;
+		text-align: center;
+		cursor: pointer;
+		
+		&::before{
+			background-color: $light-white;
+		}
+	}
+
 }
