@@ -130,7 +130,7 @@ body {
 	height: 75vh;
 	text-align: center;
 	color: $pure-white;
-	@include mixins.heroImages('../img/meat-header-mini.jpg');
+	@include mixins.heroImages('../img/meat-5667327_640.jpg');
 	background-attachment: scroll;
 	&__heading {
 		font-size: 4.8rem;
@@ -141,7 +141,7 @@ body {
 		font-size: 1.4rem;
 	}
 	&__btn {
-		margin-top: 2em;
+		margin-top: 5em;
 		padding: 0.8em 1.6em;
 		background: $pure-white;
 		border: none;
@@ -150,16 +150,90 @@ body {
 		text-decoration: none;
 		text-align: center;
 		cursor: pointer;
-
 		&::before {
 			background-color: $light-white;
 		}
+	}
+}
+//MAIN==============================================
+.dreams {
+	&__box {
+		display: flex;
+		flex-direction: column;
+		margin: 2em 0;
+	}
+	&__img {
+		width: 100%;
+		margin-bottom: 1em;
+	}
+	&__tittle {
+		margin-bottom: 0.5em;
+	}
+	&__text {
+		font-size: 1.4rem;
+	}
+}
+
+.hero-img{
+	position: relative;
+	padding: 10em 2em;
+	@include mixins.heroImages('../img/smoked-meat-769623_640.jpg');
+	text-align: center;
+	color: $pure-white;
+	overflow: hidden;
+
+	&__title{
+		margin-bottom: 0.5em;
+		font-size: 4.8em;
+	}
+	&__text{
+		padding: 1em 0;
+		text-transform: uppercase;
 	}
 }
 
 //==================================================
 //                        MEDIA
 //==================================================
+
+@media (min-width: 576px) {
+	.dreams {
+		&__box {
+
+			flex-direction: row;
+			justify-content: space-between;
+		
+
+			&-text {
+				width: 55%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				padding: 0px 40px;
+				
+					text-align: justify;
+				
+			}
+			&-img {
+				width: 40%;
+				&--right {
+					order: 1;
+				}
+			}
+		}
+		&__img {
+			margin-bottom: 0;
+			max-width: 400px;
+			max-height: 300px;
+			background-size: cover;
+		}
+		&__title {
+			padding-bottom: 2em;
+			font-weight: bold;
+			text-align: center;
+		}
+	}
+}
 
 @media (min-width: 768px) {
 	.white-block {
@@ -171,17 +245,78 @@ body {
 			font-size: 6.6rem;
 		}
 		&__text {
-			font-size: 2rem;
+			font-size: 1rem;
 		}
 		&__btn {
 			font-size: 1.6rem;
 		}
-		background-image: $red-gradient, url(../img/meat-header-big.jpg);
+		background-image: $red-gradient, url(../img/meat-5667327_1920.jpg);
+	}
+	.dreams {
+		&__title {
+			padding-bottom: 1em;
+
+			font-weight: bold;
+			text-align: center;
+		}
+		&__text {
+			font-size: 1.8rem;
+		}
+	}
+	.hero-img{
+		padding: 25rem 2em;
+		background-image: $red-gradient, url('../img/smoked-meat-769623_1920.jpg');
+		hr{
+			margin: 0 auto;
+			width: 70%;
+		}
+		&__title{
+			font-size: 5.0em;
+		}
+		&_text{
+			font-size: 2.2rem;
+		}
 	}
 }
 @media (min-width: 992px) {
 	.burger-btn {
 		top: 50px;
 		right: 50px;
+	}
+	// .nav{
+	// 	&__item{
+	// 		font-size: 4.8rem;
+	// 	}
+	// }
+	.dreams {
+		&__box {
+			margin: 5em 0;
+			&-text {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				// margin-bottom: 2.5em;
+			}
+		}
+		&__title {
+			font-size: 3.6rem;
+			padding-bottom: 1em;
+
+			font-weight: bold;
+			text-align: center;
+		}
+		&__text {
+			font-size: 2.2rem;
+		}
+	}
+	.hero-img{
+		padding: 30rem 2em;
+		&__title{
+			font-size: 6.2em;
+		}
+		hr{
+			width: 60%;
+			max-width: 900px;
+		}
 	}
 }
